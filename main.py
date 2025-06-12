@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd  
 
+st.sidebar.image("./logo.png")
+
 df = pd.read_csv(r"./Input_Sales_Data_v2.csv")
 df['Date'] = pd.to_datetime(df['Date'], errors='coerce') 
 agg_df = df.groupby(['Date', 'Manufacturer']).agg({'Volume': 'sum', 
